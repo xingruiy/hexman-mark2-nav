@@ -24,8 +24,6 @@ ros2 launch orb_slam3_ros tum_mono.launch.py     # monocular (TUM)
 # then: ros2 bag play <bag> --rate 1.0
 ```
 
----
-
 ## Benchmark setup
 
 | modality | dataset / sequence | native binary | ROS launch / `sensor_type` |
@@ -42,8 +40,6 @@ so timing/memory are comparable. Trajectories are evaluated with `evo` (ATE RMSE
 Sim3 alignment for monocular, SE3 otherwise) against dataset ground truth.
 
 > This is a very crude test: identical performance with native version is expected but not guaranteed. 
-
----
 
 ## Results
 
