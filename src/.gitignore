@@ -1,0 +1,43 @@
+# ROS 2 Build Artifacts
+build/
+install/
+log/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Extension modules
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# C++ binaries/object files
+*.o
+*.obj
+*.a
+*.la
+*.lo
+
+# IDE and System files
+.vscode/
+.idea/
+.DS_Store
+*.swp

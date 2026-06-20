@@ -1,0 +1,46 @@
+# ROS2 params for the multi-RGB-D-inertial dataset (RealSense D455 + MicroStrain GX5-25).
+# https://github.com/seungsang07/multi-rgbd-inertial-dataset
+# We use the FRONT camera (Camera0). The dataset bag carries NO camera_info and NO tf,
+# so the bag-preparation step injects /cam_front/camera_info and a tf_static
+# imu_link->cam_front built from the dataset calibration package.
+# IMU noise values are from the dataset's imu_intrinsic.txt.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: rgbd_imu
+    world_frame_id: odom
+    camera_frame_id: cam_front
+    publish_tf: false
+    image_sync_slop: 0.03
+    tf_lookup_timeout: 10.0
+
+    imu_frame_id: imu_link
+
+    camera:
+      fps: 30
+      rgb: true
+
+    imu:
+      noise_gyro: 9.197894784736535e-05
+      noise_acc:  0.0002491764679474808
+      gyro_walk:  9.588669895768504e-07
+      acc_walk:   1.951205599566178e-05
+      frequency:  100.0   # MicroStrain GX5-25 runs at 100 Hz
+      insert_kfs_when_lost: false
+
+    rgbd:
+      depth_map_factor: 1000.0   # D455 aligned depth in millimetres
+
+    stereo:
+      th_depth: 40.0
+      baseline: 0.05
+
+    orb:
+      n_features: 1250
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0

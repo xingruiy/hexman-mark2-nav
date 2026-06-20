@@ -1,0 +1,24 @@
+# ROS2 params for TUM Monocular dataset.
+# Camera intrinsics come from /camera/camera_info.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: monocular
+    world_frame_id: odom
+    camera_frame_id: camera_link
+    publish_tf: false
+    image_sync_slop: 0.03
+
+    camera:
+      fps: 30
+      rgb: true
+
+    orb:
+      n_features: 1000
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0

@@ -1,0 +1,43 @@
+# ROS2 params for orb_slam3 RGB-D + IMU node, tuned for RealSense D435i.
+# Camera intrinsics are NOT here — they come from /camera/color/camera_info.
+# IMU<->camera extrinsic is NOT here — it comes from /tf_static.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: rgbd_imu
+    world_frame_id: odom
+    camera_frame_id: camera_link
+    publish_tf: false
+    image_sync_slop: 0.03
+    tf_lookup_timeout: 10.0
+
+    imu_frame_id: camera_imu_optical_frame
+
+    camera:
+      fps: 30
+      rgb: true
+
+    imu:
+      noise_gyro: 0.01
+      noise_acc:  0.1
+      gyro_walk:  1.0e-6
+      acc_walk:   1.0e-4
+      frequency:  200.0
+      insert_kfs_when_lost: false
+
+    rgbd:
+      depth_map_factor: 1000.0
+
+    stereo:
+      th_depth: 40.0
+      baseline: 0.0745
+
+    orb:
+      n_features: 1250
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0

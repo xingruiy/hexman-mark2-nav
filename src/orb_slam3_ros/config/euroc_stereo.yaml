@@ -1,0 +1,32 @@
+# ROS2 params for EuRoC MAV stereo (no IMU) dataset.
+# Camera intrinsics come from /cam0/camera_info and /cam1/camera_info.
+# Stereo extrinsic (Tlr) comes from tf_static.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: stereo
+    world_frame_id: odom
+    camera_frame_id: cam0
+    publish_tf: false
+    image_sync_slop: 0.03
+    tf_lookup_timeout: 10.0
+
+    right_camera_frame_id: cam1
+
+    camera:
+      fps: 20
+      rgb: false
+
+    stereo:
+      baseline: 0.11
+      th_depth: 35.0
+
+    orb:
+      n_features: 1200
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0

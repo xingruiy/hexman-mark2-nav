@@ -1,0 +1,35 @@
+# ROS2 params for EuRoC MAV monocular-inertial dataset.
+# Camera intrinsics come from /cam0/camera_info; IMU-to-camera extrinsic from tf_static.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: monocular_imu
+    world_frame_id: odom
+    camera_frame_id: cam0
+    publish_tf: false
+    image_sync_slop: 0.03
+    tf_lookup_timeout: 10.0
+
+    imu_frame_id: imu0
+
+    camera:
+      fps: 20
+      rgb: false
+
+    imu:
+      noise_gyro: 1.0e-4
+      noise_acc:  1.0e-2
+      gyro_walk:  1.0e-6
+      acc_walk:   1.0e-4
+      frequency:  200.0
+      insert_kfs_when_lost: false
+
+    orb:
+      n_features: 1000
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0

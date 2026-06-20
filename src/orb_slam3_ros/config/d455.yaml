@@ -1,0 +1,40 @@
+# RealSense D455 camera parameters for realsense2_camera_node.
+# Frame IDs will be: camera_link, camera_color_optical_frame, camera_imu_optical_frame, etc.
+
+/camera:
+  ros__parameters:
+    camera_name: 'camera'
+    serial_no: ''
+    usb_port_id: ''
+
+    rgb_camera:
+      color_profile: '640x480x30'
+    color_info_qos: 'SENSOR_DATA'
+    color_qos: 'SENSOR_DATA'
+
+    depth_module:
+      depth_profile: '640x480x30'
+      emitter_enabled: 1
+      emitter_on_off: false
+    depth_qos: 'SENSOR_DATA'
+    depth_info_qos: 'SENSOR_DATA'
+
+    enable_accel: true
+    enable_color: true
+    enable_depth: true
+    enable_gyro: true
+    enable_infra1: false
+    enable_infra2: false
+
+    align_depth:
+      enable: true
+
+    pointcloud:
+      enable: false
+
+    gyro_fps: 200
+    accel_fps: 200
+    unite_imu_method: 2
+
+    enable_sync: true
+    metadata_enabled: true

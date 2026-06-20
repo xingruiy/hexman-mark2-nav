@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>orb_slam3</name>
+  <version>0.1.0</version>
+  <description>ORB_SLAM3 SLAM core (Pangolin/Viewer/MapDrawer/FrameDrawer stripped), packaged for ROS2 Humble.</description>
+  <maintainer email="64749983+xingruiy@users.noreply.github.com">Xingrui Yang</maintainer>
+  <license>GPL-3.0-only</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>eigen3_cmake_module</buildtool_depend>
+
+  <depend>orb_slam3_dbow2</depend>
+  <depend>orb_slam3_g2o</depend>
+  <depend>eigen</depend>
+  <depend>eigen3_cmake_module</depend>
+  <depend>libopencv-dev</depend>
+  <depend>libboost-serialization-dev</depend>
+  <depend>libssl-dev</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

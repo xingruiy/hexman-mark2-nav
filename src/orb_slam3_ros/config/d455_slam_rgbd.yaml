@@ -1,0 +1,32 @@
+# ROS2 params for orb_slam3 RGB-D node (no IMU), tuned for RealSense D455.
+# Camera intrinsics come from /camera/color/camera_info.
+
+/orb_slam3:
+  ros__parameters:
+    sensor_type: rgbd
+    world_frame_id: odom
+    camera_frame_id: camera_link
+    publish_tf: true
+    image_sync_slop: 0.03
+    tf_lookup_timeout: 10.0
+
+    camera:
+      fps: 30
+      rgb: true
+
+    rgbd:
+      depth_map_factor: 1000.0
+
+    stereo:
+      th_depth: 40.0
+      baseline: 0.05
+
+    orb:
+      n_features: 1250
+      scale_factor: 1.2
+      n_levels: 8
+      ini_th_fast: 20
+      min_th_fast: 7
+
+    system:
+      th_far_points: 0.0
